@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "textorize"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.date = "2009-09-26"
   s.summary = "OS X subpixel antialiased PNG string renderer"
   s.email = "thomas@fesch.at"
