@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 require "optparse"
-
-$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 require "textorize"
 
 options = {}
