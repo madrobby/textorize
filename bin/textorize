@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require "optparse"
-require "../lib/textorize/renderer"
-require "../lib/textorize/saver"
-require "../lib/textorize/runner"
+require "lib/textorize"
+
 
 options = {}
 opts = OptionParser.new do |opts|
