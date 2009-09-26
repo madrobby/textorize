@@ -1,5 +1,9 @@
 textorize produces beautifully sub-pixel-antialiased text graphics on OS X. Output format is always PNG.
 
+View the presentation on why this is awesome and how it compares:
+
+http://www.slideshare.net/madrobby/textorize
+
 Install the gem and binary by doing:
 
 $ gem sources -a http://gems.github.com
