@@ -24,7 +24,7 @@ module Textorize
     attr_accessor :output
 
     def initialize
-      @window = NSWindow.alloc.initWithContentRect_styleMask_backing_defer([150, 1500, 1000, 500], NSBorderlessWindowMask, 2, 0)
+      @window = NSWindow.alloc.initWithContentRect_styleMask_backing_defer([-2000, -2000, 2000, 2000], NSBorderlessWindowMask, 2, 0)
     end
     
     def applicationDidFinishLaunching(notification)

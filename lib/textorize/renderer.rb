@@ -5,11 +5,11 @@ module Textorize
     include OSX
 
     def initialize(window, string, options)
-      @text_view = NSTextView.alloc.initWithFrame([0,0,1000,100])
-      
+      @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
+
+      @text_view.setString string      
       set_attribs options
       window.setContentView @text_view
-      @text_view.setString string
       @text_view.sizeToFit
       
       window.display
@@ -30,14 +30,13 @@ module Textorize
         @text_view.useAllLigatures(nil)
         
         color = (options[:color] || '0,0,0').split(',')
-        fgcolor = NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1)
-        bgcolor = (options[:background] || '1,1,1').split(',')
-        @text_view.setBackgroundColor( 
-          NSColor.colorWithDeviceRed_green_blue_alpha(bgcolor[0], bgcolor[1], bgcolor[2], 1)
-        )
-        @text_view.setTextColor(fgcolor)
+        background = (options[:background] || '1,1,1').split(',')
         
-        puts @text_view.inspect
+        @text_view.setTextColor(
+          NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1))
+        
+        @text_view.setBackgroundColor( 
+          NSColor.colorWithDeviceRed_green_blue_alpha(background[0], background[1], background[2], 1))
         
         para = NSMutableParagraphStyle.alloc.init
         para.setLineSpacing(options[:lineheight])

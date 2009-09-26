@@ -18,28 +18,12 @@ opts = OptionParser.new do |opts|
     options[:lineheight] = v
   end
   
-  opts.on('-k', '--kerning=[STEPS]', Integer, 'Tighten or loosen kerning by the given amount') do |v|
-    options[:kerning] = v
-  end
-  
-  opts.on('-w', '--width=[WIDTH]', Integer, 'Wrapping width in pixels') do |v|
-    options[:width] = v
-  end
-  
   opts.on('-o', '--output=[FILENAME]', String, 'Specify filename for saving') do |v|
     options[:output] = v
   end
   
   opts.on('-b', '--obliqueness=[ANGLE]', Float, 'Slant angle') do |v|
     options[:obliqueness] = v
-  end
-  
-  opts.on('-t', '--stencil=[COLOR]', String, 'Render background with color and stencil text') do |v|
-    options[:stencil] = v
-  end
-  
-  opts.on('-r', '--reverse', 'Reverse stencil (color on transparent background)') do
-    options[:reverse_stencil] = true
   end
   
   opts.on('-c', '--color=[COLOR]', String, 'Render text in specific color') do |v|
