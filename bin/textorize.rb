@@ -1,0 +1,70 @@
+#!/usr/bin/env ruby
+require "optparse"
+require "../lib/textorize/renderer"
+require "../lib/textorize/saver"
+require "../lib/textorize/runner"
+
+options = {}
+opts = OptionParser.new do |opts|
+  opts.banner = "Usage: #$0 [options] string"
+  
+  opts.on('-f', '--font=[FONT]', String, 'Font name') do |v|
+    options[:font] = v
+  end
+  
+  opts.on('-s', '--size=[SIZE]', Float, 'Font size in point') do |v|
+    options[:size] = v
+  end
+  
+  opts.on('-l', '--lineheight=[HEIGHT]', Float, 'Line height in point') do |v|
+    options[:lineheight] = v
+  end
+  
+  opts.on('-k', '--kerning=[STEPS]', Integer, 'Tighten or loosen kerning by the given amount') do |v|
+    options[:kerning] = v
+  end
+  
+  opts.on('-w', '--width=[WIDTH]', Integer, 'Wrapping width in pixels') do |v|
+    options[:width] = v
+  end
+  
+  opts.on('-o', '--output=[FILENAME]', String, 'Specify filename for saving') do |v|
+    options[:output] = v
+  end
+  
+  opts.on('-b', '--obliqueness=[ANGLE]', Float, 'Slant angle') do |v|
+    options[:obliqueness] = v
+  end
+  
+  opts.on('-t', '--stencil=[COLOR]', String, 'Render background with color and stencil text') do |v|
+    options[:stencil] = v
+  end
+  
+  opts.on('-r', '--reverse', 'Reverse stencil (color on transparent background)') do
+    options[:reverse_stencil] = true
+  end
+  
+  opts.on('-c', '--color=[COLOR]', String, 'Render text in specific color') do |v|
+    options[:color] = v
+  end
+  
+  opts.on('-b', '--background=[COLOR]', String, 'Render background in specific color') do |v|
+    options[:background] = v
+  end
+  
+  opts.on_tail('-h', '--help', 'Display this message and exit') do
+    puts opts
+    exit
+  end
+end.parse!
+
+options[:font] ||= 'Arial'
+options[:size] ||= 28.0
+options[:kerning] ||= 0
+options[:lineheight] ||= options[:size]
+options[:output] ||= 'output.png'
+options[:strings] = ARGV.first || 'Hello World'
+options[:width] ||= 250
+options[:obliqueness] ||= 0
+
+renderer = Textorize::Runner.new(options[:strings], options[:output], options)

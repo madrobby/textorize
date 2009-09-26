@@ -1,0 +1,15 @@
+textorize produces beautifully sub-pixel-antialiased text graphics on OS X. Output format is always PNG.
+
+Usage: ./textorize.rb [options] string
+    -f, --font=[FONT]                Font name
+    -s, --size=[SIZE]                Font size in point
+    -l, --lineheight=[HEIGHT]        Line height in point
+    -k, --kerning=[STEPS]            Tighten or loosen kerning by the given amount
+    -w, --width=[WIDTH]              Wrapping width in pixels
+    -o, --output=[FILENAME]          Specify filename for saving
+    -b, --obliqueness=[ANGLE]        Slant angle
+    -t, --stencil=[COLOR]            Render background with color and stencil text
+    -r, --reverse                    Reverse stencil (color on transparent background)
+    -c, --color=[COLOR]              Render text in specific color
+        --background=[COLOR]         Render background in specific color
+    -h, --help                       Display this message and exit
