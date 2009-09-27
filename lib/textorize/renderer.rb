@@ -7,8 +7,7 @@ module Textorize
     def initialize(window, string, options)
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
 
-      @text_view.setString string      
-      set_attribs options
+      set_attr_and_text options, string
       window.setContentView @text_view
       @text_view.sizeToFit
       
@@ -25,18 +24,9 @@ module Textorize
     
     private 
       
-      def set_attribs(options)
+      def set_attr_and_text(options, string)
         @text_view.setHorizontallyResizable(true)
         @text_view.useAllLigatures(nil)
-        
-        color = (options[:color] || '0,0,0').split(',')
-        background = (options[:background] || '1,1,1').split(',')
-        
-        @text_view.setTextColor(
-          NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1))
-        
-        @text_view.setBackgroundColor( 
-          NSColor.colorWithDeviceRed_green_blue_alpha(background[0], background[1], background[2], 1))
         
         para = NSMutableParagraphStyle.alloc.init
         para.setLineSpacing(options[:lineheight])
@@ -50,6 +40,17 @@ module Textorize
         
         @text_view.setTypingAttributes(attribs)
         @text_view.lowerBaseline(nil)
+        
+        @text_view.setString string
+        
+        color = (options[:color] || '0,0,0').split(',')
+        background = (options[:background] || '1,1,1').split(',')
+        
+        @text_view.setTextColor(
+          NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1))
+        
+        @text_view.setBackgroundColor( 
+          NSColor.colorWithDeviceRed_green_blue_alpha(background[0], background[1], background[2], 1))
       end
     
   end

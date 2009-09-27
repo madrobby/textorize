@@ -9,13 +9,17 @@ Usage: textorize [options] string
     -f, --font=[FONT]                Font name
     -s, --size=[SIZE]                Font size in point
     -l, --lineheight=[HEIGHT]        Line height in point
-    -w, --width=[WIDTH]              Wrapping width in pixels
     -o, --output=[FILENAME]          Specify filename for saving
-    -b, --obliqueness=[ANGLE]        Slant angle
+    -b, --obliqueness=[ANGLE]        Slant angle (radians)
     -c, --color=[COLOR]              Render text in specific color
         --background=[COLOR]         Render background in specific color
     -h, --help                       Display this message and exit
     
+Examples:
+
+textorize -f"Gotham" -s200 Hello  --> creates "output.png"
+textorize -fLucida\ Grande -s150 --color=0.5,1,0.5 --background=0,0,0.5 foo\ bar
+
 This software is alpha-quality and has some bugs and known issues. Please contribute!
 
 textorize is released under the MIT license.
