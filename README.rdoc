@@ -1,0 +1,44 @@
+= textorize: for a more beautiful web
+
+textorize produces beautifully subpixel antialiased text graphics on OS X, through a Rubycocoa Ruby script.
+
+Output format is always PNG.
+
+= Learn more
+
+View the presentation on why this is awesome and how it compares to other "web typography" solutions and techniques:
+http://www.slideshare.net/madrobby/textorize
+
+= Install
+
+Install the gem and binary by doing:
+
+    $ gem sources -a http://gems.github.com
+    $ sudo gem install madrobby-textorize 
+
+This will install the textorize Ruby Gem, and the +textorize+ command
+line tool.
+
+= Usage (command line tool)
+
+    textorize [options] string
+      -f, --font=[FONT]                Font name
+      -s, --size=[SIZE]                Font size in point
+      -l, --lineheight=[HEIGHT]        Line height in point
+      -o, --output=[FILENAME]          Specify filename for saving
+      -b, --obliqueness=[ANGLE]        Slant angle (radians)
+      -c, --color=[COLOR]              Render text in specific color
+          --background=[COLOR]         Render background in specific color
+      -h, --help                       Display this message and exit
+    
+= Examples
+
+    textorize -f"Gotham" -s200 Hello
+    
+    textorize -fLucida\ Grande -s150 --color=0.5,1,0.5 --background=0,0,0.5 foo\ bar
+    
+= It's alpha!
+
+This software is alpha-quality and has some bugs and known issues. Please contribute!
+
+textorize is released under the MIT license.
