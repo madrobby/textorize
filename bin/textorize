@@ -18,6 +18,10 @@ opts = OptionParser.new do |opts|
     options[:lineheight] = v
   end
   
+  opts.on('-k', '--kerning=[VALUE]', Float, 'Kerning adjustment') do |v|
+    options[:kerning] = v
+  end
+  
   opts.on('-o', '--output=[FILENAME]', String, 'Specify filename for saving') do |v|
     options[:output] = v
   end
