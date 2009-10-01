@@ -18,6 +18,10 @@ opts = OptionParser.new do |opts|
     options[:lineheight] = v
   end
   
+  opts.on('--list-fonts', 'List available fonts') do |v|
+    options[:util] = 'list-fonts'
+  end
+  
   opts.on('-k', '--kerning=[VALUE]', Float, 'Kerning adjustment') do |v|
     options[:kerning] = v
   end
@@ -34,11 +38,16 @@ opts = OptionParser.new do |opts|
     options[:color] = v
   end
   
-  opts.on('-b', '--background=[COLOR]', String, 'Render background in specific color') do |v|
+  opts.on('-g', '--background=[COLOR]', String, 'Render background in specific color') do |v|
     options[:background] = v
   end
   
   opts.on_tail('-h', '--help', 'Display this message and exit') do
+    puts opts
+    exit
+  end
+  
+  if !ARGV.first
     puts opts
     exit
   end
@@ -49,8 +58,9 @@ options[:size] ||= 28.0
 options[:kerning] ||= 0
 options[:lineheight] ||= options[:size]
 options[:output] ||= 'output.png'
-options[:strings] = ARGV.first || 'Hello World'
+options[:strings] = ARGV.first
 options[:width] ||= 250
 options[:obliqueness] ||= 0
+options[:util] ||= ''
 
 renderer = Textorize::Runner.new(options[:strings], options[:output], options)

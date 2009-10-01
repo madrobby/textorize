@@ -27,10 +27,19 @@ module Textorize
       @window = NSWindow.alloc.initWithContentRect_styleMask_backing_defer([-2000, -2000, 2000, 2000], NSBorderlessWindowMask, 2, 0)
     end
     
+    def list_fonts
+      fonts = NSFontManager.sharedFontManager.availableFontFamilies
+      puts fonts.sort.join("\n")
+    end
+    
     def applicationDidFinishLaunching(notification)
-      renderer = Renderer.new(@window, @string, @options)
-      Saver.new(renderer).write_to_file(@output)
-      NSApplication.sharedApplication.terminate(nil)
+      if options[:util] == 'list-fonts'
+        list_fonts
+      else
+        renderer = Renderer.new(@window, @string, @options)
+        Saver.new(renderer).write_to_file(@output)
+      end
+      NSApplication.sharedApplication.terminate(nil)      
     end
     
   end

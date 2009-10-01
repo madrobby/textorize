@@ -19,6 +19,12 @@ Install the gem and binary by doing:
 This will install the textorize Ruby Gem, and the +textorize+ command
 line tool.
 
+If you're not using the default ruby environment on OS X, you'll
+need to install RubyCocoa.
+
+Here's how:
+http://rubycocoa.sourceforge.net/GettingStarted
+
 = Usage (command line tool)
 
     textorize [options] string
