@@ -31,10 +31,12 @@ http://rubycocoa.sourceforge.net/GettingStarted
       -f, --font=[FONT]                Font name
       -s, --size=[SIZE]                Font size in point
       -l, --lineheight=[HEIGHT]        Line height in point
+          --list-fonts                 List available fonts
+      -k, --kerning=[VALUE]            Kerning adjustment
       -o, --output=[FILENAME]          Specify filename for saving
-      -b, --obliqueness=[ANGLE]        Slant angle (radians)
+      -b, --obliqueness=[ANGLE]        Slant angle
       -c, --color=[COLOR]              Render text in specific color
-          --background=[COLOR]         Render background in specific color
+      -g, --background=[COLOR]         Render background in specific color
       -h, --help                       Display this message and exit
     
 = Examples
