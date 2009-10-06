@@ -1,27 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>textorize: Pristine text rasterizer for the Web</title>	
+	<title>textorize: Pristine font rendering for the web</title>	
 	<style type="text/css">
 		body {
   		margin-top: 1.0em;
-  		background-color: #8a2ac2;
-		  font-family: "Helvetica,Arial,FreeSans"; 
-  		color: #ffffff;
+  		background-color: #fff;
+		  font: 1em/1.2em Helvetica, Arial; 
+  		color: #000;
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-		h1 { font-size: 3.8em; color: #75d53d; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
+		h1 { 
+		  font-size: 3.8em; 
+		  margin-bottom: 3px;
+		}
+		h1 .small { font-size: 0.3em; }
 		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #75d53d; }
+		h2 { font-size: 1.5em; color: #000; }
     h3 { text-align: center; color: #75d53d; }
-    a { color: #75d53d; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    a { color: #008; }
+    .description { 
+      font-size: 1.2em; line-height: 1.4em; margin-bottom: 30px; margin-top: 30px; 
+    }
     .download { float: right; }
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
@@ -32,7 +37,6 @@
   <a href="http://github.com/madrobby/textorize"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
   
   <div id="container">
-
     <div class="download">
       <a href="http://github.com/madrobby/textorize/zipball/master">
         <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
@@ -40,28 +44,113 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
       
-    <h1><a href="http://github.com/madrobby/textorize">textorize</a> 
-      <span class="small">by <a href="http://github.com/madrobby">madrobby</a></span></h1>
-
-    <div class="description">
+    <h1><a href="http://github.com/madrobby/textorize"><img src="textorize.png" alt="textorize"/></a> 
+      <span class="small">by <a href="http://github.com/madrobby">Thomas Fuchs</a></span></h1>
       
+    <div class="description">
+      textorize is a Ruby-based font rasterizer command line utility
+      for Mac OS X. It generates PNG files from an input string and 
+      options, using Mac OS X's pristine typography facilities.
     </div>
+    
+    <h2>Subpixel antialising</h2>
+    <p>
+      The biggest advantage over other web font rendering techniques is
+      full support of OS X's advanced <a href="http://en.wikipedia.org/wiki/Subpixel_antialiasing">subpixel antialiasing</a>. 
+    </p>
+    <p>
+      You can see this in action in the zoomed-in "textorize" headline at the top of
+      this page. In essence, the apparent resolution of the screen is
+      tripled (see the presentation below for more info). 
+    </p>
 
+    <h2>View the presentation</h2>
+    <p>
+      <div>
+        <object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=textorize-090926112503-phpapp02&#038;rel=0&#038;stripped_title=textorize" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=textorize-090926112503-phpapp02&#038;rel=0&#038;stripped_title=textorize" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+      </div>
+      <a href="http://www.slideshare.net/madrobby/textorize"  title="Textorize">Textorize</a>
+    </p>
+    
+    <p>
+      Find out more at the 
+      <a href="http://mir.aculo.us/2009/09/29/textorize-pristine-font-rendering-for-the-web/">
+        textorize article at Thomas' blog.
+      </a>
+    </p>
 
     <h2>Download</h2>
+    <p>
+      Install the command line tool and Ruby Gem via:
+      <pre>$ gem sources -a http://gems.github.com
+$ sudo gem install madrobby-textorize</pre>
+      This will install the textorize Ruby Gem, and the 
+      <code>textorize</code> command line tool.
+    </p>
+    <p>
+      If you’re not using the default ruby environment on OS X, 
+      you’ll need to <a href="http://rubycocoa.sourceforge.net/GettingStarted">install RubyCocoa</a>.
+    </p>
     <p>
       You can download this project in either
       <a href="http://github.com/madrobby/textorize/zipball/master">zip</a> or
       <a href="http://github.com/madrobby/textorize/tarball/master">tar</a> formats.
     </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+    <p>
+      You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
       <pre>$ git clone git://github.com/madrobby/textorize</pre>
     </p>
+    
+    
+    <h2>Usage</h2>
+    <p>
+      <pre>textorize [options] string
+  -f, --font=[FONT]                Font name
+  -s, --size=[SIZE]                Font size in point
+  -l, --lineheight=[HEIGHT]        Line height in point
+      --list-fonts                 List available fonts
+  -k, --kerning=[VALUE]            Kerning adjustment
+  -o, --output=[FILENAME]          Specify filename for saving
+  -b, --obliqueness=[ANGLE]        Slant angle
+  -c, --color=[COLOR]              Render text in specific color
+  -g, --background=[COLOR]         Render background in specific color
+  -h, --help                       Display this message and exit</pre>
+      The color parameters take any CSS color, in #abc, 
+      #aabbcc, rgb(1,2,3) or rgba(1,2,3,0.5) format.
+    </p>
+    
+    <h2>Examples</h2>
+    <p>
+      Generate a <b>output.png</b> file of the string "Hello" in black on white 200pt
+      <a href="http://www.typography.com/fonts/font_overview.php?productLineID=%20%20%20%20100008">Gotham</a>.
+      <pre>textorize -f"Gotham" -s200 Hello</pre>
+      <img src="output.png"/>
+    </p>
+    <p>  
+      Generate a <b>foo.png</b> file of the string "foo bar" in 
+      19pt Lucida Grande, 75% opacity white on a dark green background,
+      with additional spacing between glyphs:
+      <pre>textorize -fLucida\ Grande -s19 -k1.5 -ofoo.png --color=rgba\(255,255,255,0.75\)
+  --background=#003800 foo\ bar</pre>
+      <img src="foo.png"/>
+    </p>
+    <p>  
+      Generate a <b>fancy.png</b> file of the string "fancypants" in 
+      60pt <a href="http://www.typografski.de/fontboutique/pages/e_free_neoretro.html">NeoRetro</a>:
+      <pre>textorize -fNeoRetro -s60 -ofancy.png fancypants</pre>
+      <img src="fancy.png"/>
+    </p>
+    
+    <p>
+      I recommend using the <a href="http://github.com/grosser/smusher">smusher</a> command
+      line tool to losslessly shrink the resulting PNG images.
+    </p>
       
     <div class="footer">
-      get the source code on GitHub: 
-      <a href="http://github.com/madrobby/textorize">madrobby/textorize</a>
+      Get the source code on GitHub: 
+      <a href="http://github.com/madrobby/textorize">madrobby/textorize</a><br/>
+      textorize is released under the MIT license. &copy; 2009 Thomas Fuchs &lt;thomas@fesch.at&gt;
     </div>
     
   </div>
