@@ -43,14 +43,8 @@ module Textorize
         
         @text_view.setString string
         
-        color = (options[:color] || '0,0,0').split(',')
-        background = (options[:background] || '1,1,1').split(',')
-        
-        @text_view.setTextColor(
-          NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1))
-        
-        @text_view.setBackgroundColor( 
-          NSColor.colorWithDeviceRed_green_blue_alpha(background[0], background[1], background[2], 1))
+        @text_view.setTextColor NSColor.from_css(options[:color] || 'black')
+        @text_view.setBackgroundColor NSColor.from_css(options[:background] || 'white')
       end
     
   end

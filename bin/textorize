@@ -34,11 +34,11 @@ opts = OptionParser.new do |opts|
     options[:obliqueness] = v
   end
   
-  opts.on('-c', '--color=[COLOR]', String, 'Render text in specific color') do |v|
+  opts.on('-c', '--color=[COLOR]', String, 'Render text in specific color (CSS color value)') do |v|
     options[:color] = v
   end
   
-  opts.on('-g', '--background=[COLOR]', String, 'Render background in specific color') do |v|
+  opts.on('-g', '--background=[COLOR]', String, 'Render background in specific color (CSS color value)') do |v|
     options[:background] = v
   end
   
