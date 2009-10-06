@@ -6,8 +6,7 @@ Output format is always PNG.
 
 = Learn more
 
-View the presentation on why this is awesome and how it compares to other "web typography" solutions and techniques:
-http://www.slideshare.net/madrobby/textorize
+Visit http://textorize.org/ and view the presentation on why this is awesome and how it compares to other "web typography" solutions and techniques.
 
 = Install
 
