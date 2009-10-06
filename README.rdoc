@@ -1,13 +1,16 @@
 = textorize: for a more beautiful web
 
+Official homepage: http://textorize.org
+
 textorize produces beautifully subpixel antialiased text graphics on OS X, through a Rubycocoa Ruby script.
 
 Output format is always PNG.
 
 = Learn more
 
-View the presentation on why this is awesome and how it compares to other "web typography" solutions and techniques:
-http://www.slideshare.net/madrobby/textorize
+Visit http://textorize.org and view the presentation on why this is 
+awesome and how it compares to other "web typography" solutions 
+and techniques.
 
 = Install
 
