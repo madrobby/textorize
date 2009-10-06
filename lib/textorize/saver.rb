@@ -11,6 +11,6 @@ module Textorize
     def write_to_file(file)
       @png.writeToFile_atomically(file, true)
     end
-
+    
   end
 end
