@@ -38,15 +38,22 @@ http://rubycocoa.sourceforge.net/GettingStarted
       -c, --color=[COLOR]              Render text in specific color
       -g, --background=[COLOR]         Render background in specific color
       -h, --help                       Display this message and exit
+      
+The color parameters take any CSS color, in #abc, #aabbcc, rgb(1,2,3) or
+rgba(1,2,3,0.5) format.
     
 = Examples
 
     textorize -f"Gotham" -s200 Hello
     
-    textorize -fLucida\ Grande -s150 --color=0.5,1,0.5 --background=0,0,0.5 foo\ bar
+    textorize -fLucida\ Grande -s150 --color=rgba\(12,56,99,0.5\) --background=#ff8080 foo\ bar
     
 = It's alpha!
 
 This software is alpha-quality and has some bugs and known issues. Please contribute!
 
 textorize is released under the MIT license.
+(c) 2009 Thomas Fuchs <thomas@fesch.at>.
+
+NSColor extensions taken from LimeChat, http://github.com/psychs/limechat.
+LimeChat is copyrighted free software by Satoshi Nakagawa <psychs@limechat.net>.
