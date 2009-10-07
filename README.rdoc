@@ -34,17 +34,18 @@ http://rubycocoa.sourceforge.net/GettingStarted
 
 = Usage (command line tool)
 
-    textorize [options] string
-      -f, --font=[FONT]                Font name
-      -s, --size=[SIZE]                Font size in point
-      -l, --lineheight=[HEIGHT]        Line height in point
-          --list-fonts                 List available fonts
-      -k, --kerning=[VALUE]            Kerning adjustment
-      -o, --output=[FILENAME]          Specify filename for saving
-      -b, --obliqueness=[ANGLE]        Slant angle
-      -c, --color=[COLOR]              Render text in specific color
-      -g, --background=[COLOR]         Render background in specific color
-      -h, --help                       Display this message and exit
+    Usage: textorize [options] string
+        -f, --font=[FONT]                Font name
+        -s, --size=[SIZE]                Font size in point
+        -l, --lineheight=[HEIGHT]        Line height in point
+        -t, --ligatures=[TYPE]           Ligatures usage: all, standard or off
+            --list-fonts                 List available fonts
+        -k, --kerning=[VALUE]            Kerning adjustment
+        -o, --output=[FILENAME]          Specify filename for saving
+        -b, --obliqueness=[ANGLE]        Slant angle
+        -c, --color=[COLOR]              Render text in specific color (CSS color value)
+        -g, --background=[COLOR]         Render background in specific color (CSS color value)
+        -h, --help                       Display this message and exit
       
 The color parameters take any CSS color, in #abc, #aabbcc, rgb(1,2,3) or
 rgba(1,2,3,0.5) format.

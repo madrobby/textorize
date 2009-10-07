@@ -18,6 +18,10 @@ opts = OptionParser.new do |opts|
     options[:lineheight] = v
   end
   
+  opts.on('-t', '--ligatures=[TYPE]', String, 'Ligatures usage: all, standard or off') do |v|
+    options[:ligatures] = v
+  end
+  
   opts.on('--list-fonts', 'List available fonts') do |v|
     options[:util] = 'list-fonts'
   end

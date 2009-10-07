@@ -29,17 +29,19 @@ module Textorize
       
       def set_attr_and_text(options, string)
         @text_view.horizontallyResizable = true
-        @text_view.useAllLigatures(nil)
         
         para = NSMutableParagraphStyle.alloc.init
         para.lineSpacing = options[:lineheight]
+        
+        options[:ligatures] ||= 'standard'
         
         @text_view.typingAttributes = {
           NSFontAttributeName => NSFont.fontWithName_size(options[:font], options[:size]),
           NSKernAttributeName => options[:kerning],
           NSParagraphStyleAttributeName => para,
           NSBaselineOffsetAttributeName => 0,
-          NSObliquenessAttributeName    => options[:obliqueness]
+          NSObliquenessAttributeName => options[:obliqueness],
+          NSLigatureAttributeName => { 'off' => 0, 'standard' => 1, 'all' => 2 }[options[:ligatures]]
         }
         
         @text_view.lowerBaseline(nil)
@@ -47,7 +49,7 @@ module Textorize
         @text_view.string = string
         @text_view.textColor = NSColor.from_css(options[:color] || 'black')
         @text_view.backgroundColor = NSColor.from_css(options[:background] || 'white')
-        @text_view.drawsBackground = true
+        @text_view.drawsBackground = true        
       end
     
   end
