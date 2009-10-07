@@ -7,6 +7,9 @@ module Textorize
     def initialize(window, string, options)
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
       
+      window.opaque = false
+      window.backgroundColor = NSColor.from_css('transparent')
+      
       set_attr_and_text options, string
       window.contentView = @text_view
       @text_view.sizeToFit
@@ -44,6 +47,7 @@ module Textorize
         @text_view.string = string
         @text_view.textColor = NSColor.from_css(options[:color] || 'black')
         @text_view.backgroundColor = NSColor.from_css(options[:background] || 'white')
+        @text_view.drawsBackground = true
       end
     
   end
