@@ -46,6 +46,10 @@ opts = OptionParser.new do |opts|
     options[:background] = v
   end
   
+  opts.on('-a', '--smoothing=[VALUE]', Integer, 'Font smoothing: 0=no subpixel AA, 1=light, 2=normal, 3=strong') do |v|
+    options[:font_smoothing] = v
+  end
+  
   opts.on_tail('-h', '--help', 'Display this message and exit') do
     puts opts
     exit

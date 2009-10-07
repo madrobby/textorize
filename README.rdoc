@@ -45,6 +45,7 @@ http://rubycocoa.sourceforge.net/GettingStarted
         -b, --obliqueness=[ANGLE]        Slant angle
         -c, --color=[COLOR]              Render text in specific color (CSS color value)
         -g, --background=[COLOR]         Render background in specific color (CSS color value)
+        -a, --smoothing=[VALUE]          Font smoothing: 0=no subpixel AA, 1=light, 2=normal, 3=strong
         -h, --help                       Display this message and exit
       
 The color parameters take any CSS color, in #abc, #aabbcc, rgb(1,2,3) or

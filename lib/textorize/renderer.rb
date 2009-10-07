@@ -4,7 +4,7 @@ module Textorize
   class Renderer
     include OSX
     
-    def initialize(window, string, options)
+    def initialize(window, string, options)            
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
       
       window.opaque = false
