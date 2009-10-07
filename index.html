@@ -141,6 +141,16 @@ $ sudo gem install madrobby-textorize</pre>
       <pre>textorize -fNeoRetro -s60 -ofancy.png fancypants</pre>
       <img src="fancy.png"/>
     </p>
+    <p>  
+      Generate a <b>transparent.png</b> file of the string "transparent" in white on a transparent background in
+      50pt ProFont (not that the transparent background forces normal, non-subpixel antialiasing):
+      <pre>textorize -fProFont -cwhite -gtransparent -s50 -otransparent.png transparent</pre>
+      
+      <div style="background:url(bg.png);padding:10px;color:#fff">
+        <img src="transparent.png"/><br/>
+        Above image is a 24 bit transparent PNG on a DIV with a background image.
+      </div>
+    </p>
     
     <p>
       I recommend using the <a href="http://github.com/grosser/smusher">smusher</a> command
