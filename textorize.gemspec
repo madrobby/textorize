@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name = "textorize"
-  s.version = "0.21"
-  s.date = "2009-10-06"
+  s.version = "0.22"
+  s.date = "2009-10-07"
   s.summary = "OS X subpixel antialiased PNG string renderer"
   s.email = "thomas@fesch.at"
-  s.homepage = "http://github.com/madrobby/textorize"
-  s.description = "Textorize is a OS X utility to render subpixel antialised strings into PNG files."
+  s.homepage = "http://textorize.org/"
+  s.description = "Textorize is a OS X utility to render subpixel antialiased strings into PNG files."
   s.has_rdoc = false
   s.require_paths = ['lib']
   s.authors = ["Thomas Fuchs"]

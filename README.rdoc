@@ -14,7 +14,11 @@ and techniques.
 
 = Install
 
-Install the gem and binary by doing:
+If you use gemcutter:
+
+    $ gem install textorize
+
+Or, if you prefer the version from Github:
 
     $ gem sources -a http://gems.github.com
     $ sudo gem install madrobby-textorize 
