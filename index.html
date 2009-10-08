@@ -112,22 +112,43 @@ $ sudo gem install madrobby-textorize</pre>
       For the latest updates and neat tricks follow <a href="https://twitter.com/textorize">@textorize</a> on Twitter.
     </p>
     
-    
     <h2>Usage</h2>
     <p>
       <pre>textorize [options] string
   -f, --font=[FONT]                Font name
   -s, --size=[SIZE]                Font size in point
   -l, --lineheight=[HEIGHT]        Line height in point
+  -t, --ligatures=[TYPE]           Ligatures usage: all, standard or off
       --list-fonts                 List available fonts
   -k, --kerning=[VALUE]            Kerning adjustment
   -o, --output=[FILENAME]          Specify filename for saving
   -b, --obliqueness=[ANGLE]        Slant angle
-  -c, --color=[COLOR]              Render text in specific color
-  -g, --background=[COLOR]         Render background in specific color
+  -c, --color=[COLOR]              Render text in specific color (CSS color value)
+  -g, --background=[COLOR]         Render background in specific color (CSS color value)
+  -a, --smoothing=[VALUE]          Font smoothing: 0=no subpixel AA, 1=light, 2=normal, 3=strong
   -h, --help                       Display this message and exit</pre>
       The color parameters take any CSS color, in #abc, 
       #aabbcc, rgb(1,2,3) or rgba(1,2,3,0.5) format.
+    </p>
+    
+    <h2>Antialiasing options</h2>
+    <p>
+      These options are great for optimizing the appearance of light fonts at small fonts sizes.
+      Here's an example comparing the rendering of Helvetica Neue Ulitralight at 12pt, with
+      the various Photoshop and textorize smoothing options.<br/>
+      <img src="antialiasoptions.png"/><br/>
+    </p>
+    <p>
+      <code>-a0</code> (or <code>--smoothing=0</code>) turns of subpixel antialiasing.
+    </p>
+    <p>
+      <code>-a1</code> (or <code>--smoothing=1</code>) turns on light subpixel antialiasing. This mode makes glyphs rendered thinner, and is a bit more akin to Cleartype on Windows than the default OS X font rendering.
+    </p>
+    <p>
+      <code>-a2</code> (or <code>--smoothing=2</code>) turns on medium/normal subpixel antialiasing. This is the default OS X font smoothing.
+    </p>
+    <p>
+      <code>-a3</code> (or <code>--smoothing=3</code>) turns on strong subpixel antialiasing.
     </p>
     
     <h2>Examples</h2>
