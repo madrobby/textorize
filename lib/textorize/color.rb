@@ -5,7 +5,7 @@
 module OSX
   class NSColor
     def self.from_rgb(red, green, blue, alpha=1.0)
-      NSColor.colorWithCalibratedRed_green_blue_alpha(red/255.0, green/255.0, blue/255.0, alpha)
+      NSColor.colorWithDeviceRed_green_blue_alpha(red/255.0, green/255.0, blue/255.0, alpha)
     end
     
     HTML4_KEYWORDS = {
