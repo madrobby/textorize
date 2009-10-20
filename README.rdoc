@@ -41,6 +41,7 @@ http://rubycocoa.sourceforge.net/GettingStarted
         -t, --ligatures=[TYPE]           Ligatures usage: all, standard or off
             --list-fonts                 List available fonts
         -k, --kerning=[VALUE]            Kerning adjustment
+        -p, --padding=[VALUE]            Padding in px
         -o, --output=[FILENAME]          Specify filename for saving
         -b, --obliqueness=[ANGLE]        Slant angle
         -c, --color=[COLOR]              Render text in specific color (CSS color value)

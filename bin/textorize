@@ -30,6 +30,10 @@ opts = OptionParser.new do |opts|
     options[:kerning] = v
   end
   
+  opts.on('-p', '--padding=[VALUE]', Float, 'Padding in px') do |v|
+    options[:padding] = v
+  end
+  
   opts.on('-o', '--output=[FILENAME]', String, 'Specify filename for saving') do |v|
     options[:output] = v
   end

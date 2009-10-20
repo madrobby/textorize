@@ -4,7 +4,7 @@ module Textorize
   class Renderer
     include OSX
     
-    def initialize(window, string, options)            
+    def initialize(window, string, options)
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
       
       window.opaque = false
@@ -45,6 +45,8 @@ module Textorize
         }
         
         @text_view.lowerBaseline(nil)
+        
+        @text_view.setTextContainerInset([options[:padding],options[:padding]]) if options[:padding]
         
         @text_view.string = string
         @text_view.textColor = NSColor.from_css(options[:color] || 'black')
