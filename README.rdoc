@@ -58,9 +58,9 @@ rgba(1,2,3,0.5) format.
     
     textorize -fLucida\ Grande -s150 --color=rgba\(12,56,99,0.5\) --background=#ff8080 foo\ bar
     
-= It's alpha!
+= Contribute!
 
-This software is alpha-quality and has some bugs and known issues. Please contribute!
+Contributions in the form of bug fixes, features and documentation are always welcome!
 
 textorize is released under the MIT license.
 (c) 2009 Thomas Fuchs <thomas@fesch.at>.
