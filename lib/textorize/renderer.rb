@@ -12,6 +12,7 @@ module Textorize
       
       set_attr_and_text options, string
       window.contentView = @text_view
+      
       @text_view.sizeToFit
       
       window.display
@@ -44,8 +45,7 @@ module Textorize
           NSLigatureAttributeName => { 'off' => 0, 'standard' => 1, 'all' => 2 }[options[:ligatures]]
         }
         
-        @text_view.lowerBaseline(nil)
-        
+        @text_view.lowerBaseline(nil)        
         @text_view.setTextContainerInset([options[:padding],options[:padding]]) if options[:padding]
         
         @text_view.string = string
