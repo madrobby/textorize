@@ -13,18 +13,17 @@ awesome and how it compares to other "web typography" solutions
 and techniques.
 
 = Install
-
-If you use gemcutter:
-
+  
+Grab the textorize gem, and you're done:
+    
     $ gem install textorize
-
-Or, if you prefer the version from Github:
-
-    $ gem sources -a http://gems.github.com
-    $ sudo gem install madrobby-textorize 
 
 This will install the textorize Ruby Gem, and the +textorize+ command
 line tool.
+
+textorize used gemcutter, so if you haven't installed it yet, do:
+
+    $ gem install gemcutter
 
 If you're not using the default ruby environment on OS X, you'll
 need to install RubyCocoa.
