@@ -1,33 +1,31 @@
-require 'osx/cocoa'
+framework 'Cocoa'
 
 module Textorize
   class Runner
     
     def initialize(string, output, options)
       if options[:font_smoothing]
-        defaults = OSX::NSUserDefaults.standardUserDefaults
+        defaults = NSUserDefaults.standardUserDefaults
         options[:original_font_smoothing] = defaults.integerForKey('AppleFontSmoothing')
         defaults.setInteger_forKey(options[:font_smoothing], 'AppleFontSmoothing')
       end
       
-      app = OSX::NSApplication.sharedApplication
-      app.delegate = RunnerApplication.alloc.initWithString_output_options(string, output, options)
+      app = NSApplication.sharedApplication
+      app.delegate = RunnerApplication.alloc.initWithString string, output:output, options:options
       app.run
     end
     
   end
   
-  class RunnerApplication < OSX::NSObject
-    include OSX
+  class RunnerApplication
     
-    def initWithString_output_options(string, output, options)
+    def initWithString(string, output:output, options:options)
       if init
         @string, @output, @options = string, output, options
-        @window = NSWindow.alloc.objc_send(
-          :initWithContentRect, [-2000, -2000, 2000, 2000],
-                    :styleMask, NSBorderlessWindowMask,
-                      :backing, 2,
-                        :defer, 0)
+        @window = NSWindow.alloc.initWithContentRect [-2000, -2000, 2000, 2000],
+                    styleMask: NSBorderlessWindowMask,
+                      backing: 2,
+                        defer: 0
         
         self
       end
