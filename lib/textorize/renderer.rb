@@ -1,8 +1,7 @@
-require 'osx/cocoa'
+framework 'Cocoa'
 
 module Textorize
   class Renderer
-    include OSX
     
     def initialize(window, string, options)
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
@@ -37,7 +36,7 @@ module Textorize
         options[:ligatures] ||= 'standard'
         
         @text_view.typingAttributes = {
-          NSFontAttributeName => NSFont.fontWithName_size(options[:font], options[:size]),
+          NSFontAttributeName => NSFont.fontWithName(options[:font], size:options[:size]),
           NSKernAttributeName => options[:kerning],
           NSParagraphStyleAttributeName => para,
           NSBaselineOffsetAttributeName => 0,
